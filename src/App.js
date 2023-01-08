@@ -1,5 +1,4 @@
 import { Canvas } from '@react-three/fiber';
-import { Fog } from 'three';
 import Experience from './Experience';
 
 export default function App() {
@@ -8,7 +7,8 @@ export default function App() {
             <Canvas
                 shadows
                 camera={{
-                    fov: 70,
+                    zoom: 1.5,
+                    fov: 80,
                     near: 0.1,
                     far: 200,
                     position: [-3, 1.5, 4],

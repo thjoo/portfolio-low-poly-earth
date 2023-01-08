@@ -45,20 +45,16 @@ export default function Experience() {
                         blur: 5,
                         far: 5,
                     }}
-                    controls={ref}
-                    preset="soft"
-                    intensity={0.0002}
-                    environment="dawn"
                 >
                     <PresentationControls
                         global
                         config={{ mass: 1, tension: 500 }}
                         snap={{ mass: 6, tension: 1500 }}
-                        rotation={[0.2, 0, -0.25]}
+                        rotation={[0.2, 3.6, -0.25]}
                         polar={[-Math.PI / 3, Math.PI / 3]}
                         azimuth={[-Math.PI / 1.4, Math.PI / 2]}
                     >
-                        <Model scale={0.5} rotation-y={3.8} position-x={0} />
+                        <Model scale={0.5} rotation-y={0} position-x={0} />
                     </PresentationControls>
                 </Stage>
             </Suspense>
