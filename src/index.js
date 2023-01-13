@@ -15,92 +15,70 @@ root.render(
                 <br />
                 <span>Thierry</span>
             </h1>
-            <SocialIcon
-                style={{
-                    position: 'absolute',
-                    top: 40,
-                    right: 0,
-                    width: 30,
-                    height: 30,
-                }}
-                url="https://www.linkedin.com/in/thierry-joerin-076a95132/"
-                bgColor="#ffffff"
-            />
-            <SocialIcon
-                style={{
-                    position: 'absolute',
-                    top: 80,
-                    right: 0,
-                    width: 30,
-                    height: 30,
-                }}
-                url="https://github.com/thjoo"
-                bgColor="#ffffff"
-            />
-            <SocialIcon
-                style={{
-                    position: 'absolute',
-                    top: 120,
-                    right: 0,
-                    width: 30,
-                    height: 30,
-                }}
-                url="https://www.youtube.com/channel/UCF9EAzk0rGuU2j9KUgU5jDg"
-                bgColor="#ffffff"
-            />
-
-            <h2 className="title-left">Current.projects</h2>
-
-            <div className="container">
-                <div className="point point-0">
-                    <div className="label">1</div>
-                    <div className="text">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et
-                        dolore magna aliquyam
-                    </div>
-                </div>
-                <div className="point point-0">
-                    <div className="label">2</div>
-                    <div className="text">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et
-                        dolore magna aliquyam
-                    </div>
-                </div>
-                <div className="point point-0">
-                    <div className="label">3</div>
-                    <div className="text">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et
-                        dolore magna aliquyam
-                    </div>
-                </div>
-                <div className="point point-0">
-                    <div className="label">4</div>
-                    <div className="text">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et
-                        dolore magna aliquyam
-                    </div>
-                </div>
-                <div className="point point-0">
-                    <div className="label">5</div>
-                    <div className="text">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et
-                        dolore magna aliquyam
-                    </div>
-                </div>
+            <div className="socials">
+                <SocialIcon
+                    style={{
+                        width: '2rem',
+                        height: '2rem',
+                        pointerEvents: 'all',
+                    }}
+                    url="https://www.linkedin.com/in/thierry-joerin-076a95132/"
+                    bgColor="#ffffff95"
+                />
+                <SocialIcon
+                    style={{
+                        width: '2rem',
+                        height: '2rem',
+                        pointerEvents: 'all',
+                    }}
+                    url="https://github.com/thjoo"
+                    bgColor="#ffffff95"
+                />
+                <SocialIcon
+                    style={{
+                        width: '2rem',
+                        height: '2rem',
+                        pointerEvents: 'all',
+                    }}
+                    url="https://www.youtube.com/channel/UCF9EAzk0rGuU2j9KUgU5jDg"
+                    bgColor="#ffffff95"
+                />
+                <SocialIcon
+                    style={{
+                        width: '2rem',
+                        height: '2rem',
+                        pointerEvents: 'all',
+                    }}
+                    url="https://www.reddit.com/user/thjo3d"
+                    bgColor="#ffffff95"
+                />
+                <SocialIcon
+                    style={{
+                        width: '2rem',
+                        height: '2rem',
+                        pointerEvents: 'all',
+                    }}
+                    url="https://twitter.com/JoerinThierry"
+                    bgColor="#ffffff95"
+                />
             </div>
 
-            {/* <div className="container archive">
-            <h2 className="title-right">Old.projects</h2>
-            <div className="archive project">Project1</div>
-            <div className="archive project">Project2</div>
-            <div className="archive project">Project3</div>
-            <div className="archive project">Project4</div>
-        </div> */}
+            <h2 className="title-left">current.projects</h2>
+
+            <div className="container left">
+                <Cards title={1}></Cards>
+                <Cards title={2} link={'www.host.ch'}></Cards>
+                <Cards title={4}></Cards>
+                <Cards title={4}></Cards>
+            </div>
+
+            <h2 className="title-right">old.projects</h2>
+
+            <div className="container right">
+                <Cards title={1}></Cards>
+                <Cards title={2} link={'www.host.ch'}></Cards>
+                <Cards title={4}></Cards>
+            </div>
         </div>
     </>
 );

@@ -40,14 +40,23 @@ h1 {
 
   h2 {
     top: 220px;
-    left: -270px;
     padding: 0;
     margin: 0;
     letter-spacing: 2px;
     font-weight: 400;
     font-size: 2em;
+  }
+
+  .title-left {
+    left: -270px;
     transform-origin: top right 0;
     transform: rotate( 270deg );
+  }
+
+  .title-right {
+    right: -190px;
+    transform-origin: top left 0;
+    transform: rotate( -270deg );
   }
 
   .wrapper {
@@ -56,19 +65,24 @@ h1 {
     right:2vw;
     bottom:0vh;
     left:3vw;
-    pointer-events: none
-
+    pointer-events: none;
+    
   }
 
   .container {
     position: absolute;
     top: 220px;
-    left: 3rem;
-    width: 10%;
-    height: 30%;
     display: grid;
-    grid-gap: 0.5em;
+    grid-gap: 4em;
     justify-content: start;
+  }
+
+  .container.left {
+    left: 2.2rem;
+  }
+
+  .container.right {
+    right: 4rem;
   }
 
   .point {
@@ -78,16 +92,20 @@ h1 {
 
   }
 
+  .point:hover .label{
+    background: #ffffff;
+    box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+  }
+
   .point:hover .text {
     opacity: 1;
-
   }
 
   .point .label {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: #ffffff90;
+    background-color: #ffffff95;
     color: #000000;
     text-align: center;
     line-height: 2rem;
@@ -99,10 +117,9 @@ h1 {
 
   .point .text {
     width: 200px;
-    margin: -2rem 3rem;
     padding: 1rem;
     border-radius: 2px;
-    background: #EDEBD790;
+    background: #ffffff97;
     color: #000000;
     line-height: 1.3em;
     font-weight: 100;
@@ -111,4 +128,22 @@ h1 {
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
+  }
+
+  .container.left .point .text {
+    margin: -2rem 3rem;
+  }
+
+  .container.right .point .text {
+    margin: -2rem -15rem;
+  }
+
+  .socials {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    grid-gap: 1rem;
+    justify-content: start;
+    cursor: pointer;
   }
