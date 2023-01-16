@@ -1,3 +1,4 @@
+import { Loader, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import Experience from './Experience';
 
@@ -7,15 +8,15 @@ export default function App() {
             <Canvas
                 shadows
                 camera={{
-                    zoom: 1.5,
                     fov: 80,
-                    near: 0.1,
-                    far: 200,
-                    position: [-3, 1.5, 4],
+                    position: [0, 1.5, 2.2],
                 }}
             >
-                <Experience position={[0, 0, 0]} />
+                <color args={['#d6c2f9']} attach="background" />
+
+                <Experience />
             </Canvas>
+            <Loader />
         </>
     );
 }

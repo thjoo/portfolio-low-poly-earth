@@ -25,11 +25,11 @@ h1, h2 {
 }
 
 h1 {
-    top: 60px;
+    top: 40px;
     font-weight: 900;
     line-height: 0.6em;
     letter-spacing: -2px;
-    font-size: 5em;
+    font-size: 4em;
     margin: 0;
   }
   
@@ -39,7 +39,7 @@ h1 {
 
 
   h2 {
-    top: 220px;
+    top: 200px;
     padding: 0;
     margin: 0;
     letter-spacing: 2px;
@@ -69,9 +69,10 @@ h1 {
     
   }
 
+
   .container {
     position: absolute;
-    top: 220px;
+    top: 200px;
     display: grid;
     grid-gap: 4em;
     justify-content: start;
@@ -147,3 +148,5 @@ h1 {
     justify-content: start;
     cursor: pointer;
   }
+
+  

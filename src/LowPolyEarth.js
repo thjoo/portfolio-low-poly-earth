@@ -77,54 +77,31 @@ export default function Model(props) {
         <group ref={globeRef} {...props} dispose={null}>
             <group scale={1.03}>
                 <mesh
-                    receiveShadow
                     geometry={nodes.Icosphere.geometry}
                     material={oceanMaterial}
                 />
                 <mesh
-                    castShadow
-                    receiveShadow
                     geometry={nodes.Icosphere_1.geometry}
                     material={snowMaterial}
                 />
             </group>
             <mesh
                 ref={cloudRef}
-                castShadow
                 geometry={nodes.Clouds.geometry}
                 material={cloudMaterial}
                 scale={1.4}
             />
+            <mesh geometry={nodes.Sphere.geometry} material={groundMaterial} />
+            <mesh geometry={nodes.Sphere_1.geometry} material={snowMaterial} />
             <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Sphere.geometry}
-                material={groundMaterial}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Sphere_1.geometry}
-                material={snowMaterial}
-            />
-            <mesh
-                castShadow
-                receiveShadow
                 geometry={nodes.Sphere_2.geometry}
                 material={desertMaterial}
             />
             <mesh
-                castShadow
-                receiveShadow
                 geometry={nodes.Sphere_3.geometry}
                 material={leavesMaterial}
             />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Sphere_4.geometry}
-                material={trunkMaterial}
-            />
+            <mesh geometry={nodes.Sphere_4.geometry} material={trunkMaterial} />
         </group>
     );
 }

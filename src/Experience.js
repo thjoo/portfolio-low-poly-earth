@@ -1,38 +1,16 @@
-import {
-    OrbitControls,
-    useHelper,
-    Stage,
-    BakeShadows,
-    softShadows,
-    SpotLight,
-    PresentationControls,
-} from '@react-three/drei';
-import { useLoader, useThree } from '@react-three/fiber';
+import { Stage, PresentationControls, OrbitControls } from '@react-three/drei';
+import { useFrame, useThree } from '@react-three/fiber';
 import { Suspense, useRef } from 'react';
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import Model from './LowPolyEarth';
 import * as THREE from 'three';
 
 export default function Experience() {
     const { camera, gl } = useThree();
     const ref = useRef();
-    // const directionalLight = useRef();
-    // useHelper(directionalLight, THREE.DirectionalLightHelper, 1);
-
-    // softShadows({
-    //     frustum: 3.75,
-    //     size: 0.005,
-    //     near: 9.5,
-    //     samples: 17,
-    //     rings: 11,
-    // });
 
     return (
         <>
-            <color args={['#d6c2f9']} attach="background" />
-            {/* <OrbitControls camera={camera} /> */}
-            <Suspense>
+            <Suspense fallback={null}>
                 <Stage
                     shadows={{
                         type: 'contact',
@@ -46,16 +24,23 @@ export default function Experience() {
                         far: 5,
                     }}
                 >
-                    <PresentationControls
-                        global
-                        config={{ mass: 1, tension: 500 }}
-                        snap={{ mass: 6, tension: 1500 }}
-                        rotation={[0.2, 3.6, -0.25]}
-                        polar={[-Math.PI / 3, Math.PI / 3]}
-                        azimuth={[-Math.PI / 1.4, Math.PI / 2]}
-                    >
-                        <Model scale={0.5} rotation-y={0} position-x={0} />
-                    </PresentationControls>
+                    {/* <PresentationControls
+                    config={{ mass: 1, tension: 500 }}
+                    snap={{ mass: 6, tension: 1500 }}
+                    rotation={[0.2, 3.6, -0.25]}
+                    polar={[0, Math.PI / 4]}
+                    azimuth={[-Math.PI / 1.4, Math.PI / 2]}
+                > */}
+                    <OrbitControls
+                        camera={camera}
+                        enableDamping={true}
+                        enablePan={true}
+                        screenSpacePanning={false}
+                        minDistance={1.5}
+                        maxDistance={5}
+                    />
+                    <Model scale={1} />
+                    {/* </PresentationControls> */}
                 </Stage>
             </Suspense>
         </>
