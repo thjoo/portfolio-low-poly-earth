@@ -25,11 +25,11 @@ export default function Experience() {
                     }}
                 >
                     <PresentationControls
-                        config={{ mass: 1, tension: 500 }}
-                        snap={{ mass: 6, tension: 1500 }}
-                        rotation={[0.2, 3.6, -0.25]}
-                        polar={[0, Math.PI / 4]}
-                        azimuth={[-Math.PI / 1.4, Math.PI / 2]}
+                        rotation={[0.13, 0.1, 0]}
+                        polar={[-1, 0.2]}
+                        azimuth={[-1, 0.75]}
+                        config={{ mass: 2, tension: 400 }}
+                        snap={{ mass: 4, tension: 400 }}
                     >
                         {/* <OrbitControls
                         camera={camera}
