@@ -10,13 +10,6 @@ root.render(
     <>
         <App />
         <div className="wrapper">
-            <div className="header">
-                <h1>
-                    Create <span style={{ fontSize: '0.4em' }}>with</span>
-                    <br />
-                    <span>Thierry</span>
-                </h1>
-            </div>
             <div className="footer">
                 <div className="socials">
                     <SocialIcon
@@ -64,26 +57,6 @@ root.render(
                         url="https://twitter.com/JoerinThierry"
                         bgColor="#ffffff95"
                     />
-                </div>
-            </div>
-            <div className="current">
-                <h2 className="title-left">current.projects</h2>
-
-                <div className="container left">
-                    <Cards title={1}></Cards>
-                    <Cards title={2} link={'www.host.ch'}></Cards>
-                    <Cards title={4}></Cards>
-                    <Cards title={4}></Cards>
-                </div>
-            </div>
-
-            <div className="old">
-                <h2 className="title-right">old.projects</h2>
-
-                <div className="container right">
-                    <Cards title={1}></Cards>
-                    <Cards title={2} link={'www.host.ch'}></Cards>
-                    <Cards title={4}></Cards>
                 </div>
             </div>
         </div>

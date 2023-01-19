@@ -8,7 +8,7 @@ import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 
 export default function Model(props) {
-    const { nodes } = useGLTF('./LowPolyEarth2.glb');
+    const { nodes, materials } = useGLTF('./LowPolyEarth_applyedMods1.glb');
 
     useMatcapTexture;
     const matcapSnowTexture = useTexture('./matcap/stone.png');
@@ -16,6 +16,38 @@ export default function Model(props) {
     const matcapLandTexture = useTexture('./matcap/ground.png');
     const matcapDesertTexture = useTexture('./matcap/wood.png');
     const matcapTrunkTexture = useTexture('./matcap/trunk.png');
+    const matcapYellowTexture = useTexture('./matcap/foliage.png');
+    const matcapBrassTexture = useTexture('./matcap/brass.png');
+    const matcapBlueTexture = useTexture('./matcap/globe.png');
+    const matcapMetalTexture = useTexture('./matcap/metal.png');
+
+    const yellowMaterial = new THREE.MeshMatcapMaterial({
+        color: new THREE.Color('#ffffff').convertSRGBToLinear(),
+        transparent: false,
+        opacity: 1,
+        matcap: matcapYellowTexture,
+    });
+
+    const brassMaterial = new THREE.MeshMatcapMaterial({
+        color: new THREE.Color('#ffffff').convertSRGBToLinear(),
+        transparent: false,
+        opacity: 1,
+        matcap: matcapBrassTexture,
+    });
+
+    const blueMaterial = new THREE.MeshMatcapMaterial({
+        color: new THREE.Color('#ffffff').convertSRGBToLinear(),
+        transparent: false,
+        opacity: 1,
+        matcap: matcapBlueTexture,
+    });
+
+    const metalMaterial = new THREE.MeshMatcapMaterial({
+        color: new THREE.Color('#ffffff').convertSRGBToLinear(),
+        transparent: false,
+        opacity: 1,
+        matcap: matcapMetalTexture,
+    });
 
     const cloudMaterial = new THREE.MeshMatcapMaterial({
         color: new THREE.Color('#ffffff').convertSRGBToLinear(),
@@ -102,8 +134,38 @@ export default function Model(props) {
                 material={leavesMaterial}
             />
             <mesh geometry={nodes.Sphere_4.geometry} material={trunkMaterial} />
+            <group
+                position={[1.08, 0.01, -0.32]}
+                rotation={[-3.14, 0, 0.71]}
+                scale={0}
+            >
+                <mesh
+                    geometry={nodes.Mesh001.geometry}
+                    material={brassMaterial}
+                />
+                <mesh
+                    geometry={nodes.Mesh001_1.geometry}
+                    material={brassMaterial}
+                />
+                <mesh
+                    geometry={nodes.Mesh001_2.geometry}
+                    material={trunkMaterial}
+                />
+                <mesh
+                    geometry={nodes.Mesh001_3.geometry}
+                    material={metalMaterial}
+                />
+                <mesh
+                    geometry={nodes.Mesh001_4.geometry}
+                    material={blueMaterial}
+                />
+                <mesh
+                    geometry={nodes.Mesh001_5.geometry}
+                    material={yellowMaterial}
+                />
+            </group>
         </group>
     );
 }
 
-useGLTF.preload('/LowPolyEarth2.glb');
+useGLTF.preload('./LowPolyEarth_applyedMods1.glb');

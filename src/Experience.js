@@ -24,23 +24,23 @@ export default function Experience() {
                         far: 5,
                     }}
                 >
-                    {/* <PresentationControls
-                    config={{ mass: 1, tension: 500 }}
-                    snap={{ mass: 6, tension: 1500 }}
-                    rotation={[0.2, 3.6, -0.25]}
-                    polar={[0, Math.PI / 4]}
-                    azimuth={[-Math.PI / 1.4, Math.PI / 2]}
-                > */}
-                    <OrbitControls
+                    <PresentationControls
+                        config={{ mass: 1, tension: 500 }}
+                        snap={{ mass: 6, tension: 1500 }}
+                        rotation={[0.2, 3.6, -0.25]}
+                        polar={[0, Math.PI / 4]}
+                        azimuth={[-Math.PI / 1.4, Math.PI / 2]}
+                    >
+                        {/* <OrbitControls
                         camera={camera}
                         enableDamping={true}
                         enablePan={true}
                         screenSpacePanning={false}
                         minDistance={1.5}
                         maxDistance={5}
-                    />
-                    <Model scale={1} />
-                    {/* </PresentationControls> */}
+                    /> */}
+                        <Model scale={1} />
+                    </PresentationControls>
                 </Stage>
             </Suspense>
         </>
